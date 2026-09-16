@@ -1,8 +1,8 @@
 <script>
-  import { language } from './language.js';
+  import { language, localized } from './language.js';
   import ruCopy from './ru.json';
   import uzCopy from './uz.json';
   let { k = '', ru = '', uz = '' } = $props();
-  const copy = $derived(k ? ($language === 'uz' ? uzCopy[k] : ruCopy[k]) : ($language === 'uz' ? uz : ru));
+  const copy = $derived(localized($language, k ? ruCopy[k] : ru, k ? uzCopy[k] : uz));
 </script>
 {@html copy || ruCopy[k] || ru}

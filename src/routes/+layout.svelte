@@ -4,7 +4,7 @@
   import { page } from '$app/state';
   import { onNavigate, afterNavigate, goto } from '$app/navigation';
   import { browser } from '$app/environment';
-  import { language } from '$lib/language.js';
+  import { language, locales, localized, tourCopy } from '$lib/language.js';
   import T from '$lib/T.svelte';
   import tours from '$lib/tours.json';
   import '$lib/style.css';
@@ -26,12 +26,12 @@
   ]);
   $effect(() => {
     if (browser && languageReady) {
-      document.documentElement.lang = $language;
+      document.documentElement.lang = $language === 'uz' ? 'uz-Latn' : $language;
       try { sessionStorage.setItem('mandarin-language',$language); } catch {}
     }
   });
   onMount(() => {
-    try { if(sessionStorage.getItem('mandarin-language') === 'uz') language.set('uz'); } catch {}
+    try { const saved=sessionStorage.getItem('mandarin-language'); if(locales.includes(saved)) language.set(saved); } catch {}
     languageReady = true;
     const preference = matchMedia('(prefers-reduced-motion: reduce)');
     const stop = () => routeAnimation?.cancel();
@@ -46,7 +46,7 @@
         async execute(input) {
           if(!input || !['all',...tours.map(t=>t.id)].includes(input.destination) || !['all','beach','city','family'].includes(input.style)) throw new Error('Invalid destination or style');
           await goto('/tours/?'+new URLSearchParams(input));
-          return {destinations:tours.filter(t=>(input.destination==='all'||t.id===input.destination)&&(input.style==='all'||t.tags.includes(input.style))).map(t=>({id:t.id,name:t[$language].name})),bookingCreated:false};
+          return {destinations:tours.filter(t=>(input.destination==='all'||t.id===input.destination)&&(input.style==='all'||t.tags.includes(input.style))).map(t=>({id:t.id,name:tourCopy(t,$language).name})),bookingCreated:false};
         }
       },{signal:lifecycle.signal})).catch(()=>{});
     }
@@ -81,21 +81,22 @@
     {:else}
       <a class="brand" href="/" aria-label="Mandarin Tour"><span class="brand-icon">m<span>✦</span></span><span>mandarin<span class="brand-small">TOUR & TRAVEL</span></span></a>
     {/if}
-    <nav id="main-nav" class:open={menuOpen} aria-label={$language==='ru'?'Основное меню':'Asosiy menyu'}>
+    <nav id="main-nav" class:open={menuOpen} aria-label={localized($language,'Основное меню','Asosiy menyu')}>
       {#each links as [href,ru,uz]}
         <a {href} aria-current={page.url.pathname===href ? 'page' : undefined}><T {ru} {uz}/></a>
       {/each}
     </nav>
     <div class="header-actions">
       <div class="language-select">
-        <select bind:value={$language} aria-label={$language==='ru'?'Язык сайта':'Sayt tili'}>
+        <select bind:value={$language} aria-label={localized($language,'Язык сайта','Sayt tili')}>
           <option value="ru" lang="ru">🇷🇺 Русский</option>
-          <option value="uz" lang="uz">🇺🇿 O‘zbekcha</option>
+          <option value="uz" lang="uz-Latn">🇺🇿 O‘zbekcha</option>
+          <option value="uz-Cyrl" lang="uz-Cyrl">🇺🇿 Ўзбекча</option>
         </select>
         <Icon name="chevron-down" />
       </div>
       {#if !umra}<a class="phone" href="tel:+998974544444">+998 97 454 44 44</a>{/if}
-      <button class="menu" aria-controls="main-nav" aria-expanded={menuOpen} aria-label={$language==='ru'?'Открыть меню':'Menyuni ochish'} onclick={()=>menuOpen=!menuOpen}><Icon name={menuOpen ? 'close' : 'menu'} /></button>
+      <button class="menu" aria-controls="main-nav" aria-expanded={menuOpen} aria-label={localized($language,'Открыть меню','Menyuni ochish')} onclick={()=>menuOpen=!menuOpen}><Icon name={menuOpen ? 'close' : 'menu'} /></button>
     </div>
   </header>
   <main id="main" class="route-content" bind:this={main} tabindex="-1">

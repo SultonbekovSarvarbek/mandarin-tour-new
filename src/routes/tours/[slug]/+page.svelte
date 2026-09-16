@@ -1,7 +1,7 @@
 <script>
  import Icon from '$lib/Icon.svelte';
- import {language} from '$lib/language.js';import T from '$lib/T.svelte';import Meta from '$lib/Meta.svelte';
- let {data}=$props();const c=$derived(data.tour[$language]);
+ import {language, localized, tourCopy} from '$lib/language.js';import T from '$lib/T.svelte';import Meta from '$lib/Meta.svelte';
+ let {data}=$props();const c=$derived(tourCopy(data.tour,$language));
 </script>
 <Meta ru={data.tour.ru.name} uz={data.tour.uz.name} description={c.text}/>
 <section class="wrap page-intro"><div class="breadcrumb"><a href="/"><T ru="Главная" uz="Bosh sahifa"/></a><span>/</span><a href="/tours/"><T ru="Туры" uz="Turlar"/></a><span>/</span><span>{c.name}</span></div><div class="eyebrow">{c.place}</div><h1>{c.name}</h1><p>{c.text}</p></section>
