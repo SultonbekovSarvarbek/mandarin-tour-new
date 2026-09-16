@@ -87,7 +87,14 @@
       {/each}
     </nav>
     <div class="header-actions">
-      <button class="lang" onclick={()=>language.set($language==='ru'?'uz':'ru')} aria-label={$language==='ru'?'Переключить на узбекский':'Переключить на русский'}>{$language==='ru'?'UZ':'RU'}</button>
+      <div class="language-select">
+        <Icon name="globe" />
+        <select bind:value={$language} aria-label={$language==='ru'?'Язык сайта':'Sayt tili'}>
+          <option value="ru" lang="ru">Русский</option>
+          <option value="uz" lang="uz">O‘zbekcha</option>
+        </select>
+        <Icon name="chevron-down" />
+      </div>
       {#if !umra}<a class="phone" href="tel:+998974544444">+998 97 454 44 44</a>{/if}
       <button class="menu" aria-controls="main-nav" aria-expanded={menuOpen} aria-label={$language==='ru'?'Открыть меню':'Menyuni ochish'} onclick={()=>menuOpen=!menuOpen}><Icon name={menuOpen ? 'close' : 'menu'} /></button>
     </div>
