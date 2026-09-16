@@ -88,10 +88,9 @@
     </nav>
     <div class="header-actions">
       <div class="language-select">
-        <Icon name="globe" />
         <select bind:value={$language} aria-label={$language==='ru'?'Язык сайта':'Sayt tili'}>
-          <option value="ru" lang="ru">Русский</option>
-          <option value="uz" lang="uz">O‘zbekcha</option>
+          <option value="ru" lang="ru">🇷🇺 Русский</option>
+          <option value="uz" lang="uz">🇺🇿 O‘zbekcha</option>
         </select>
         <Icon name="chevron-down" />
       </div>
