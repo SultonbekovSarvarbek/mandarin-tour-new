@@ -65,5 +65,72 @@
       "text": "Kelajak me’morchiligi, sahrodagi quyosh botishi va shahar shukuhi.",
       "detail": "Dubay bilan tanishing: diqqatga sazovor joylar, sohil va sahro. Dastur, ekskursiyalar va kirish shartlarini bron qilishdan oldin aniqlashtiring."
     }
+  },
+  {
+    "id": "malaysia",
+    "image": "malaysia.jpg",
+    "tags": [
+      "city",
+      "family",
+      "beach"
+    ],
+    "ru": {
+      "name": "Малайзия",
+      "place": "Куала-Лумпур",
+      "tag": "Город среди тропиков",
+      "text": "Небоскрёбы, зелёные парки и новые вкусы.",
+      "detail": "Начните с прогулок по Куала-Лумпуру и району KLCC. Затем можно обсудить с менеджером отдельную пляжную часть на Лангкави. Это идея маршрута: перелёты между городом и островом, отели и экскурсии согласуются отдельно."
+    },
+    "uz": {
+      "name": "Malayziya",
+      "place": "Kuala-Lumpur",
+      "tag": "Tropiklar orasidagi shahar",
+      "text": "Osmono‘par binolar, yashil bog‘lar va yangi ta’mlar.",
+      "detail": "Kuala-Lumpur va KLCC hududida sayrdan boshlang. Keyin menejer bilan Langkavida alohida plyaj damini muhokama qiling. Bu marshrut g‘oyasi: ichki parvozlar, mehmonxonalar va ekskursiyalar alohida kelishiladi."
+    }
+  },
+  {
+    "id": "georgia",
+    "image": "georgia.jpg",
+    "tags": [
+      "city",
+      "family"
+    ],
+    "ru": {
+      "name": "Грузия",
+      "place": "Тбилиси",
+      "tag": "Улицы с характером",
+      "text": "Балконы старого города, уютные дворики и грузинская кухня.",
+      "detail": "Посвятите несколько дней Тбилиси: старые кварталы, набережная и местная кухня. Для более длинной поездки обсудите выезд в Мцхету или горы. Поездки за город зависят от погоды и состояния дорог; состав программы нужно согласовать."
+    },
+    "uz": {
+      "name": "Gruziya",
+      "place": "Tbilisi",
+      "tag": "O‘ziga xos ko‘chalar",
+      "text": "Eski shahar balkonlari, shinam hovlilar va gruzin taomlari.",
+      "detail": "Tbilisining qadimiy mahallalari, sohil bo‘yi va mahalliy taomlariga bir necha kun ajrating. Uzoqroq safar uchun Mtsxeta yoki tog‘larga chiqishni muhokama qiling. Shahar tashqarisidagi safarlar ob-havo va yo‘l holatiga bog‘liq; dastur oldindan kelishiladi."
+    }
+  },
+  {
+    "id": "kazakhstan",
+    "image": "kazakhstan.jpg",
+    "tags": [
+      "city",
+      "family"
+    ],
+    "ru": {
+      "name": "Казахстан",
+      "place": "Алматы",
+      "tag": "Горы рядом с городом",
+      "text": "Кофейни, прогулки и горные панорамы Заилийского Алатау.",
+      "detail": "Соедините прогулки по Алматы с поездкой к Медеу или Шымбулаку. Заложите время на отдых и меняющуюся погоду в горах. Трансфер, билеты на подъёмники и доступность маршрутов уточняются отдельно."
+    },
+    "uz": {
+      "name": "Qozog‘iston",
+      "place": "Olmaota",
+      "tag": "Shahar yonidagi tog‘lar",
+      "text": "Qahvaxonalar, sayr va Iliorti Olatovi manzaralari.",
+      "detail": "Olmaotadagi sayrni Medeu yoki Shimbuloqqa safar bilan birlashtiring. Dam olish va tog‘larda o‘zgaruvchan ob-havo uchun vaqt ajrating. Transfer, ko‘targich chiptalari va marshrutlar ochiqligi alohida aniqlashtiriladi."
+    }
   }
 ]

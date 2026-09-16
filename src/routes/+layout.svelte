@@ -21,7 +21,7 @@
     ['/umra/','Главная','Bosh sahifa'], ['/umra/programs/','Программы','Dasturlar'],
     ['/umra/preparation/','Подготовка','Tayyorgarlik'], ['/umra/contacts/','Контакты','Aloqa']
   ] : [
-    ['/tours/','Туры','Turlar'], ['/about/','О нас','Biz haqimizda'],
+    ['/tours/','Туры','Turlar'], ['/about/','О нас','Biz haqimizda'], ['/guide/','Полезное','Foydali'],
     ['/umra/','Family Mandarin Umra','Family Mandarin Umra'], ['/contacts/','Контакты','Aloqa']
   ]);
   $effect(() => {
@@ -41,10 +41,10 @@
       Promise.resolve(document.modelContext.registerTool({
         name:'filter_destinations', title:'Подобрать направление',
         description:'Open the travel catalogue with country and travel-style filters. Does not book or contact anyone.',
-        inputSchema:{type:'object',properties:{destination:{type:'string',enum:['all','turkey','egypt','dubai']},style:{type:'string',enum:['all','beach','city','family']}},required:['destination','style'],additionalProperties:false},
+        inputSchema:{type:'object',properties:{destination:{type:'string',enum:['all',...tours.map(t=>t.id)]},style:{type:'string',enum:['all','beach','city','family']}},required:['destination','style'],additionalProperties:false},
         annotations:{readOnlyHint:false,untrustedContentHint:false},
         async execute(input) {
-          if(!input || !['all','turkey','egypt','dubai'].includes(input.destination) || !['all','beach','city','family'].includes(input.style)) throw new Error('Invalid destination or style');
+          if(!input || !['all',...tours.map(t=>t.id)].includes(input.destination) || !['all','beach','city','family'].includes(input.style)) throw new Error('Invalid destination or style');
           await goto('/tours/?'+new URLSearchParams(input));
           return {destinations:tours.filter(t=>(input.destination==='all'||t.id===input.destination)&&(input.style==='all'||t.tags.includes(input.style))).map(t=>({id:t.id,name:t[$language].name})),bookingCreated:false};
         }
