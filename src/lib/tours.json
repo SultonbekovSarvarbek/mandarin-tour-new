@@ -1,0 +1,69 @@
+[
+  {
+    "id": "turkey",
+    "image": "turkey.jpg",
+    "tags": [
+      "beach",
+      "family",
+      "city"
+    ],
+    "ru": {
+      "name": "Турция",
+      "place": "Анталья",
+      "tag": "Море и неспешные дни",
+      "text": "Бирюзовое побережье, старый город и отдых в своём ритме.",
+      "detail": "Пляжный отдых на побережье Антальи или прогулки по старому городу. Обсудите с менеджером отель, питание и экскурсии, чтобы подобрать поездку под ваши пожелания."
+    },
+    "uz": {
+      "name": "Turkiya",
+      "place": "Antaliya",
+      "tag": "Dengiz va sokin kunlar",
+      "text": "Moviy sohil, qadimiy shahar va o‘z maromingizdagi dam.",
+      "detail": "Antaliya sohilida dam olish yoki eski shahar bo‘ylab sayr. Sizga mos sayohat uchun mehmonxona, ovqatlanish va ekskursiyalarni menejer bilan muhokama qiling."
+    }
+  },
+  {
+    "id": "egypt",
+    "image": "egypt.jpg",
+    "tags": [
+      "beach",
+      "family"
+    ],
+    "ru": {
+      "name": "Египет",
+      "place": "Шарм-эль-Шейх",
+      "tag": "Ближе к солнцу",
+      "text": "Коралловые рифы, тёплое море и долгожданная перезагрузка.",
+      "detail": "Отдых на Красном море, пляжи и знакомство с подводным миром. Менеджер поможет уточнить доступные отели, варианты питания и условия перелёта из Ташкента."
+    },
+    "uz": {
+      "name": "Misr",
+      "place": "Sharm-ash-Shayx",
+      "tag": "Quyoshga yaqinroq",
+      "text": "Marjon riflari, iliq dengiz va uzoq kutilgan hordiq.",
+      "detail": "Qizil dengiz bo‘yida dam olish, plyajlar va suvosti dunyosi. Menejer mehmonxonalar, ovqatlanish va Toshkentdan parvoz shartlarini aniqlashtirishga yordam beradi."
+    }
+  },
+  {
+    "id": "dubai",
+    "image": "dubai.jpg",
+    "tags": [
+      "city",
+      "family"
+    ],
+    "ru": {
+      "name": "Дубай",
+      "place": "ОАЭ",
+      "tag": "Город впечатлений",
+      "text": "Архитектура будущего, закаты в пустыне и энергия большого города.",
+      "detail": "Познакомьтесь с Дубаем: городские достопримечательности, побережье и пустыня. Состав программы, экскурсии и условия въезда необходимо уточнить перед бронированием."
+    },
+    "uz": {
+      "name": "Dubay",
+      "place": "BAA",
+      "tag": "Taassurotlar shahri",
+      "text": "Kelajak me’morchiligi, sahrodagi quyosh botishi va shahar shukuhi.",
+      "detail": "Dubay bilan tanishing: diqqatga sazovor joylar, sohil va sahro. Dastur, ekskursiyalar va kirish shartlarini bron qilishdan oldin aniqlashtiring."
+    }
+  }
+]

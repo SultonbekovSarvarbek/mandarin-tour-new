@@ -1,0 +1,8 @@
+<script>
+ import Icon from '$lib/Icon.svelte';
+ import {language} from '$lib/language.js';import T from '$lib/T.svelte';import Meta from '$lib/Meta.svelte';
+ let {data}=$props();const c=$derived(data.tour[$language]);
+</script>
+<Meta ru={data.tour.ru.name} uz={data.tour.uz.name} description={c.text}/>
+<section class="wrap page-intro"><div class="breadcrumb"><a href="/"><T ru="Главная" uz="Bosh sahifa"/></a><span>/</span><a href="/tours/"><T ru="Туры" uz="Turlar"/></a><span>/</span><span>{c.name}</span></div><div class="eyebrow">{c.place}</div><h1>{c.name}</h1><p>{c.text}</p></section>
+<section class="wrap section catalog-section detail-grid"><div><img class="detail-cover" src={'/assets/'+data.tour.image} alt={c.place}/><p class="detail-copy">{c.detail}</p></div><aside class="booking-panel"><h2><T ru="Ваше путешествие" uz="Sizning sayohatingiz"/></h2><p><T ru="Подберём поездку под ваши даты и пожелания. Перед бронированием согласуем:" uz="Sanalar va istaklaringizga mos sayohatni tanlaymiz. Bron qilishdan oldin kelishamiz:"/></p><ul><li><T ru="Перелёт и трансфер" uz="Parvoz va transfer"/></li><li><T ru="Отель и питание" uz="Mehmonxona va ovqatlanish"/></li><li><T ru="Даты и полную стоимость" uz="Sanalar va to‘liq narx"/></li></ul><a class="button orange" href="https://t.me/mandarintour" target="_blank" rel="noopener"><T k="telegram"/> <Icon /></a><a class="button dark" href="tel:+998974544444">+998 97 454 44 44</a><p class="price-note"><T k="priceNote"/></p></aside></section>

@@ -1,0 +1,3 @@
+<script>
+ import Icon from '$lib/Icon.svelte';import T from "./T.svelte"; import {reveal} from "./reveal.js";</script>
+<section use:reveal id="approach" class="approach"><div class="wrap approach-inner"><div><div class="eyebrow"><T k="aboutEyebrow" /></div><h2><T k="aboutTitle" /></h2><p><T k="aboutText" /></p><a href="/contacts/" class="text-link"><span><T k="meet" /></span> <Icon /></a></div><div class="steps"><article><span>01</span><div><h3><T k="step1Title" /></h3><p><T k="step1" /></p></div></article><article><span>02</span><div><h3><T k="step2Title" /></h3><p><T k="step2" /></p></div></article><article><span>03</span><div><h3><T k="step3Title" /></h3><p><T k="step3" /></p></div></article></div></div></section>
