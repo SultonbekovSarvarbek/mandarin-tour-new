@@ -95,12 +95,12 @@
         </select>
         <Icon name="chevron-down" />
       </div>
-      {#if !umra}<a class="phone" href="tel:+998974544444">+998 97 454 44 44</a>{/if}
+      {#if !umra}<a class="phone" href="tel:+998974544444"><Icon name="phone" /> +998 97 454 44 44</a>{/if}
       <button class="menu" aria-controls="main-nav" aria-expanded={menuOpen} aria-label={localized($language,'Открыть меню','Menyuni ochish')} onclick={()=>menuOpen=!menuOpen}><Icon name={menuOpen ? 'close' : 'menu'} /></button>
     </div>
   </header>
   <main id="main" class="route-content" bind:this={main} tabindex="-1">
     {@render children()}
   </main>
-  <footer class="wrap"><a href="/" class="brand">mandarin<span class="orange-text">✦</span></a><p><T k="concept" /></p><a href={umra?'https://www.instagram.com/familymandarin_umra/':'https://www.instagram.com/mandarintour.uz/'} target="_blank" rel="noopener">Instagram <Icon name="external" /></a></footer>
+  <footer class="wrap"><a href="/" class="brand">mandarin<span class="orange-text">✦</span></a><p><T k="concept" /></p><a href={umra?'https://www.instagram.com/familymandarin_umra/':'https://www.instagram.com/mandarintour.uz/'} target="_blank" rel="noopener"><Icon name="instagram" /> Instagram </a></footer>
 </div>
